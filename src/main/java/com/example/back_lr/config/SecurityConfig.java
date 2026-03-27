@@ -23,7 +23,6 @@ public class SecurityConfig {
 
     private final UserRepository userRepository;
 
-    // Убираем JwtAuthenticationFilter из полей класса
 
     @Bean
     public UserDetailsService userDetailsService() {

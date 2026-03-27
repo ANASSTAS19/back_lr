@@ -54,7 +54,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(error);
     }
 
-    // Обработка 401 - неверные учетные данные
+    // 401 - неверные учетные данные
     @ExceptionHandler(BadCredentialsException.class)
     public ResponseEntity<ErrorResponse> handleBadCredentials(BadCredentialsException ex, HttpServletRequest request) {
         ErrorResponse error = new ErrorResponse(
@@ -67,7 +67,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
     }
 
-    // Обработка 400 - неверный тип параметра
+    // 400 - неверный тип
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public ResponseEntity<ErrorResponse> handleTypeMismatch(MethodArgumentTypeMismatchException ex,
                                                             HttpServletRequest request) {
@@ -84,7 +84,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
     }
 
-    // Обработка 405 - метод не поддерживается
+    // 405 - метод не поддерживается
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public ResponseEntity<ErrorResponse> handleMethodNotSupported(
             HttpRequestMethodNotSupportedException ex,
@@ -103,7 +103,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.METHOD_NOT_ALLOWED).body(error);
     }
 
-    // Обработка 500 - все остальные ошибки
+    // 500 - все остальные ошибки
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGenericException(Exception ex, HttpServletRequest request) {
         ErrorResponse error = new ErrorResponse(

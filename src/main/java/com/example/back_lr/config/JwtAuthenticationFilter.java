@@ -37,14 +37,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         final String jwt;
         final String username;
 
-        // Проверяем, публичный ли это маршрут
+
         String path = request.getServletPath();
         if (path.startsWith("/api/auth/")) {
             filterChain.doFilter(request, response);
             return;
         }
 
-        // Для защищенных маршрутов проверяем токен
+
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             sendUnauthorizedResponse(response, request.getRequestURI());
             return;

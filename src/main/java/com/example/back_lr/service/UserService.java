@@ -15,11 +15,11 @@ public class UserService {
 
     public User authenticate(String username, String password) {
         User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new RuntimeException("Пользователь не найден"));
 
         if (passwordEncoder.matches(password, user.getPassword())) {
             return user;
         }
-        throw new RuntimeException("Invalid password");
+        throw new RuntimeException("Неверный пароль");
     }
 }
