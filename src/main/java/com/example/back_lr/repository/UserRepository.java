@@ -1,6 +1,5 @@
 package com.example.back_lr.repository;
 
-
 import com.example.back_lr.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;

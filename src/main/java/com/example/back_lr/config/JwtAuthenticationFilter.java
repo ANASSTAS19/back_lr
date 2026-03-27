@@ -86,7 +86,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         ObjectNode errorResponse = mapper.createObjectNode();
         errorResponse.put("status", 401);
         errorResponse.put("error", "Unauthorized");
-        errorResponse.put("message", "Authentication required. Please provide a valid JWT token.");
+        errorResponse.put("message", "Требуется аутентификация. Предоставьте токен");
         errorResponse.put("path", path);
         errorResponse.put("timestamp", LocalDateTime.now().toString());
 

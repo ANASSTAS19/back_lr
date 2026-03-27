@@ -1,6 +1,5 @@
 package com.example.back_lr.controller;
 
-
 import com.example.back_lr.dto.CourseRequest;
 import com.example.back_lr.dto.CourseResponse;
 import com.example.back_lr.service.CourseService;

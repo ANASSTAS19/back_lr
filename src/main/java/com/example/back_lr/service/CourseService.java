@@ -9,7 +9,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,7 +26,7 @@ public class CourseService {
 
     public CourseResponse getCourseById(Long id) {
         Course course = courseRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Course not found with id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Курс не найден: " + id));
         return mapToResponse(course);
     }
 
@@ -42,7 +41,7 @@ public class CourseService {
     @Transactional
     public CourseResponse updateCourse(Long id, CourseRequest request) {
         Course course = courseRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Course not found with id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Курс не найден: " + id));
 
         course.setTitle(request.getTitle());
         course.setDescription(request.getDescription());
@@ -59,7 +58,7 @@ public class CourseService {
     @Transactional
     public CourseResponse patchCourse(Long id, CourseRequest request) {
         Course course = courseRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Course not found with id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Курс не найден: " + id));
 
         if (request.getTitle() != null) {
             course.setTitle(request.getTitle());
@@ -84,7 +83,7 @@ public class CourseService {
     @Transactional
     public void deleteCourse(Long id) {
         Course course = courseRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Course not found with id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Курс не найден: " + id));
         courseRepository.delete(course);
     }
 

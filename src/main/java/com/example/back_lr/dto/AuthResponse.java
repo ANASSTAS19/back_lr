@@ -1,5 +1,4 @@
 package com.example.back_lr.dto;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

@@ -1,5 +1,4 @@
 package com.example.back_lr;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

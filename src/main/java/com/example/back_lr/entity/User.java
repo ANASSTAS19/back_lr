@@ -1,6 +1,5 @@
 package com.example.back_lr.entity;
 
-
 import jakarta.persistence.*;
 
 @Entity

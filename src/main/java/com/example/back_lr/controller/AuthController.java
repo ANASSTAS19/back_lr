@@ -33,7 +33,7 @@ public class AuthController {
 
     @PostMapping("/logout")
     public ResponseEntity<?> logout() {
-        // For JWT, logout is handled client-side by discarding the token
+
         return ResponseEntity.ok().body("Logged out successfully");
     }
 }
